@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <p>ПРИВЕТ {{articles}}<p/>
+{% for articl in articles%}
+  <p>ЗАГОЛОВОК : {{articl.title}}
+      ТЕГИ
+     {%for scope in articl.scope.all%}
+      {{scope.text_scope}}: main {{scope.main}}
+      {%if scope.main == True%}
+      тег главный
+      {%endif%}
+
+     {%endfor%}
+  <p/>
+{%endfor%}
+</body>
+</html>
